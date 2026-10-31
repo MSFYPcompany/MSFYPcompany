@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="Artboard 3.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSFYP Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+<style>
+  .socials{display:flex;justify-content:center;gap:16px;margin-bottom:22px}
+.socials a{width:42px;height:42px;border-radius:50%;background:var(--card);
+  border:1px solid rgba(255,255,255,.1);display:grid;place-items:center;
+  color:var(--muted);transition:all .25s ease}
+
+/* رنگ اختصاصی نئونی برای هر شبکه اجتماعی */
+.socials a.YouTube:hover{
+  background: #ff0000;
+  color: #fff;
+  border-color: #ff0000;
+  box-shadow: 0 0 16px rgba(255, 0, 0, 0.7);
+}
+
+.socials a.Instagram:hover{
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #df5914 45%, #c62937 60%, #8c2af2 90%);
+  color: #fff;
+  border-color: #df5914;
+  box-shadow: 0 0 18px rgba(221, 42, 123, 0.8), 0 0 30px rgba(131, 58, 180, 0.5);
+}
+
+
+.socials a.Discord:hover{
+  background: #5865F2;
+  color: #fff;
+  border-color: #5865F2;
+  box-shadow: 0 0 16px rgba(88, 101, 242, 0.7);
+}
+
+.socials a.X:hover{
+  background: #ffffff;
+  color: #000;
+  border-color: #ffffff;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.7);
+}
+
+.socials a.GitHub:hover{
+  background: #2ea043;
+  color: #fff;
+  border-color: #2ea043;
+  box-shadow: 0 0 16px rgba(46, 160, 67, 0.7);
+}
+.socials a.Facebook:hover{
+  background: #2c53ff;
+  color: #fff;
+  border-color: #0385f0;
+  box-shadow: 0 0 16px rgba(46, 133, 160, 0.7);
+}
+
+  /* Neon Gradient Divider */
+.neon-divider {
+    width: 100%;
+    height: 3px; /* ضخامت خط */
+    background: linear-gradient(90deg, #41004e, #990000, #41004e); /* گرادیان از آبی به بنفش و صورتی */
+    box-shadow: 0 0 10px rgba(161, 0, 0, 0.5), 0 0 20px lch(53.23% 104.58 40 / 0.24); /* افکت درخشش نئونی */
+    margin: 40px 0; /* فاصله از بالا و پایین */
+    border: none;
+}
+
+:root{
+  /* Dark purple / black gradient theme (dark mode) */
+  --bg:#000000; --bg2:#46000f; --card:#000000;
+  --text:#ffffff; --muted:#95959c;
+  --accent:#70001a; --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  /* Page-wide dark purple to black gradient */
+  background:linear-gradient(135deg,#000000 0%,#52001f 45%,#000000 100%);
+  background-attachment:fixed;
+  color:var(--text);
+  font-family:'Inter',Tahoma,sans-serif;
+  line-height:1.7;
+}
+.container{width:min(1180px,92%);margin-inline:auto}
+.btn{
+  display: inline-block;
+  background: #70001a; /* رنگ قرمز اصلی دکمه */
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: all 0.3s ease; /* انیمیشن نرم برای تمام تغییرات */
+}
+
+.btn:hover{
+  background: #70001a; /* قرمز روشن‌تر هنگام بردن ماوس روی آن */
+  border-color: #700041;
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(255, 47, 116, 0.4); /* افکت درخشش نئونی ملایم */
+}
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff2f45; /* رنگ نئونی (قرمز/صورتی) - می‌توانی رنگ دلخواهت را بگذاری */
+  text-shadow: 0 0 8px rgba(255, 47, 69, 0.8), 
+               0 0 20px rgba(255, 47, 69, 0.4); /* افکت پخش نور نئون پشت متن */
+}
+
+
+/* ===== Header: logo + nav + button ===== */
+header{position:fixed;inset-inline:0;top:0;z-index:100;
+  background:rgba(7,5,13,.7);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.07)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.logo{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:1px}
+.logo img{height:100px;width:auto}
+nav ul{display:flex;gap:28px;list-style:none;font-size:.95rem}
+nav a{color:var(--muted);transition:color .2s}
+nav a:hover{color:var(--text)}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 22px;
+  border-radius:999px;font-weight:600;transition:transform .2s,filter .2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.25)}
+
+/* ===== Hero ===== */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  position:relative;padding-top:90px;text-align:center}
+.hero-bg{position:absolute;inset:0;
+  /* REPLACE IMAGE_PLACEHOLDER_2.jpg with your hero image */
+  background:url('IMAGE_PLACEHOLDER_2.jpg') center/cover no-repeat;
+  opacity:.45;z-index:0}
+/* Hero fade into the purple-black gradient */
+.hero::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(13, 5, 5, 0.2) 0%,rgba(20, 6, 6, 0.85) 70%,#0d0505 100%);z-index:1}
+.hero .container{position:relative;z-index:2}
+.badge{display:inline-block;border:1px solid rgba(255,255,255,.2);color:var(--muted);
+  padding:6px 16px;border-radius:999px;font-size:.8rem;margin-bottom:22px}
+.hero h1{font-size:clamp(2.4rem,6vw,4.6rem);font-weight:900;line-height:1.15}
+.hero p{max-width:640px;margin:22px auto 34px;color:var(--muted);font-size:1.1rem}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.scroll-hint{margin-top:60px;color:var(--muted);font-size:.85rem}
+
+section{padding:100px 0}
+.kicker{color:var(--accent);font-weight:800;font-size:.85rem;letter-spacing:2px;text-transform:uppercase}
+h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin:10px 0 30px}
+
+/* ===== About ===== */
+
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.about-img{border-radius:var(--radius);overflow:hidden;background:var(--card)}
+.about-img {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.about-img img {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: block;
+  width: 100%;
+  height: 90%;
+  object-fit: contain; /* از contain استفاده کن تا عکس دفرمه نشود */
+}
+
+.about p{color:var(--muted);margin-bottom:18px}
+.about-tags{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.tag{background:var(--card);border:1px solid rgba(255,255,255,.08);color:var(--muted);
+  padding:8px 18px;border-radius:999px;font-size:.85rem}
+  
+
+/* ===== News ===== */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.news-card{background:var(--card);border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--radius);overflow:hidden;transition:transform .25s}
+.news-card:hover{transform:translateY(-6px)}
+.news-card img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.news-body{padding:20px}
+.news-body small{color:var(--accent);font-weight:700}
+.news-body h3{font-size:1.05rem;margin:8px 0 14px}
+.more{color:var(--muted);font-size:.9rem}
+.more:hover{color:var(--text)}
+
+/* ===== Our Work ===== */
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.work-card{position:relative;border-radius:var(--radius);overflow:hidden;min-height:380px;
+  display:flex;align-items:flex-end;background:var(--card)}
+.work-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.work-card:hover img{transform:scale(1.05)}
+.work-card::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.85))}
+.work-info{position:relative;z-index:2;padding:26px}
+.work-info small{color:var(--accent);font-weight:800}
+.work-info h3{font-size:1.4rem;margin:6px 0 8px}
+.work-info p{color:#c9c9cf;font-size:.92rem}
+
+/* ===== Beyond Games ===== */
+.beyond-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.beyond-card{background:var(--card);border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--radius);padding:28px;transition:transform .25s}
+.beyond-card:hover{transform:translateY(-6px)}
+.beyond-card img{width:64px;height:64px;object-fit:contain;margin-bottom:18px}
+.beyond-card h3{margin-bottom:10px}
+.beyond-card p{color:var(--muted);font-size:.95rem;margin-bottom:18px}
+.link{color:var(--accent);font-weight:700}
+
+/* ===== Careers ===== */
+.job{display:flex;justify-content:space-between;align-items:center;
+  background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:14px;
+  padding:18px 24px;margin-bottom:12px;transition:border-color .2s}
+.job:hover{border-color:rgba(255,255,255,.25)}
+.job strong{font-weight:600}
+.job span{color:var(--muted);font-size:.9rem}
+
+/* ===== Partners + Footer ===== */
+
+.partner{background:rgba(21,16,31,.6);border-radius:28px;padding:70px 50px;text-align:center}
+.partner h2{max-width:640px;margin-inline:auto}
+.partner p{max-width:640px;margin:0 auto 30px;color:var(--muted)}
+footer{padding:40px 0 60px}
+/* Rounded black footer box */
+.footer-box{background:#000;border-radius:26px;
+  border:1px solid rgba(255,255,255,.09);padding:50px 40px;text-align:center}
+.footer-box img{height:100px;width:auto;margin:0 auto 26px} 
+.footer-nav{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;
+  list-style:none;margin-bottom:22px;font-size:.92rem}
+.footer-nav a{color:var(--muted)}
+.footer-nav a:hover{color:var(--text)}
+.socials{display:flex;justify-content:center;gap:16px;margin-bottom:22px}
+.socials a{width:42px;height:42px;border-radius:50%;background:var(--card);
+  border:1px solid rgba(255,255,255,.1);display:grid;place-items:center;
+  color:var(--muted);transition:all .2s}
+.socials a:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.copyright{color:#5c5c64;font-size:.8rem}
+.footer-nav a{
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.footer-nav a:hover{
+  color: #ff2f45; /* رنگ نئونی */
+  text-shadow: 0 0 8px rgba(255, 47, 69, 0.8), 
+               0 0 20px rgba(255, 47, 69, 0.4); /* افکت پخش نور نئون */
+}
+
+.socials a{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.1);
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  transition: all .25s ease;
+}
+.socials a:hover{
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 0 14px rgba(255, 47, 69, 0.6); /* افکت درخشش نئونی دور آیکون‌های اجتماعی */
+}
+
+/* هدف قرار دادن آیکون‌های داخل بخش شبکه‌های اجتماعی */
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.socials a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--card);
+    border: 1px solid rgba(255, 255, 255, .1);
+    
+    /* این دو خط کار رو تموم می‌کنه و آیکون رو دقیقاً می‌چسبونه وسطِ وسط */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: var(--muted);
+    transition: all .2s;
+}
+
+/* وقتی آیکون SVG مستقیم داخل تگ a باشد، رنگش با رنگ متن (color) هماهنگ می‌شود */
+.socials a:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+.socials a img {
+    width: 22px;  /* اندازه دلخواه برای خودِ آیکون */
+    height: 22px; /* اندازه دلخواه برای خودِ آیکون */
+    object-fit: contain; /* برای جلوگیری از دفرمه شدن */
+    display: block;
+}
+.socials a:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+
+@media(max-width:900px){
+  .about-grid,.work-grid,.news-grid,.beyond-grid{grid-template-columns:1fr}
+  nav ul{display:none}
+  .partner{padding:50px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Header: logo + navigation + open roles button ===== -->
+<header>
+  <div class="container nav">
+    <!-- REPLACE IMAGE_PLACEHOLDER_1.png with the MOB logo -->
+    <a class="logo" href="MSFYP.HTML"><img src="Artboard 2.png" alt="MSFYP Company logo"></a>
+    <nav>
+      <ul>
+        <li><a href="STUDIO.HTML">STUDIO</a></li>
+        <li><a href="NEWSROOM.html">NEWSROOM</a></li>
+        <li><a href="GAMES.HTML">GAMES</a></li>
+        <li><a href="STORE.HTML">STORE</a></li>
+        <li><a href="CAREERS.HTML">CAREERS</a></li>
+      </ul>
+    </nav>
+
+    <a class="btn" href="CAREERS.HTML">OPEN ROLES</a>
+  </div>
+</header>
+<!-- پایان بخش اول -->
+</section>
+
+<!-- این همون خط نئونی که خواستی -->
+<div class="neon-divider"></div>
+
+<!-- شروع بخش بعدی -->
+<section class="games-section">
+    <!-- محتوای بخش بعدی -->
+</section>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <span class="badge">Mysterious Stories &amp;For Your Pleasure</span>
+    <h1>Stories That Play<br>With Your Senses</h1>
+    <p>From the world of SAVEN to new universes, we craft characters, worlds, and experiences loved by millions of fans worldwide.</p>
+    <div class="hero-actions">
+      <a class="btn" href="GAMES.HTML">EXPLORE OUR GAMES</a>
+      <a class="btn ghost" href="STUDIO.HTML">MEET THE STUDIO</a>
+    </div>
+    <div class="scroll-hint">↓ SCROLL TO DISCOVER</div>
+  </div>
+</section>
+<!-- پایان بخش اول -->
+</section>
+
+<!-- این همون خط نئونی که خواستی -->
+<div class="neon-divider"></div>
+
+<!-- شروع بخش بعدی -->
+<section class="games-section">
+    <!-- محتوای بخش بعدی -->
+</section>
+
+<!-- ===== About / Who we are ===== -->
+<section id="about" class="about">
+  <div class="container about-grid">
+    <div>
+      <span class="kicker">WHO WE ARE</span>
+      <h2>A Studio Built On Storytelling</h2>
+      <p>MSFYP Company is an independent game and entertainment studio founded by one boy with a passion for creating a memorable (SAVEN)character .</p>
+      <p>Someone who started with just a regular computer, hoping for progress.</p>
+      <div class="about-tags">
+        <span class="tag">Original IP</span>
+        <span class="tag">Games &amp; Animation</span>
+        <span class="tag">Worldwide Fanbase</span>
+      </div>
+    </div>
+    <div class="about-img">
+      <!-- REPLACE IMAGE_PLACEHOLDER_3.jpg with a studio photo -->
+      <img  src="file_00000000afb881f48cb37bf004994841.png" alt="Inside MSFYP Company studio">
+    </div>
+  </div>
+</section>
+<!-- پایان بخش اول -->
+</section>
+
+<!-- این همون خط نئونی که خواستی -->
+<div class="neon-divider"></div>
+
+<!-- شروع بخش بعدی -->
+<section class="games-section">
+    <!-- محتوای بخش بعدی -->
+</section>
+
+<!-- ===== Newsroom: 3 cards ===== -->
+<section id="news">
+  <div class="container">
+    <span class="kicker">LATEST NEWS</span>
+    <h2>From The Newsroom</h2>
+    <div class="news-grid">
+      <article class="news-card">
+        <!-- REPLACE IMAGE_PLACEHOLDER_4.jpg with news image 1 -->
+        <img src="file_00000000557081f4b242dfc2b7913f18.jpg" alt="SAVEN is emerging">
+        <div class="news-body">
+          <small>OCT 27, 2026</small>
+          <h3>A New game called SAVEN</h3>
+          <a class="more" href="#">READ MORE +</a>
+        </div>
+     <!-- </article>-->
+     <!-- <article class="news-card">-->
+        <!-- REPLACE IMAGE_PLACEHOLDER_5.jpg with news image 2 -->
+     <!--   <img src="IMAGE_PLACEHOLDER_5.jpg" alt="Escape From Playtime announcement">-->
+     <!--  <div class="news-body">-->
+     <!--     <small>JUN 28, 2026</small>-->
+     <!--     <h3>Escape From Playtime Expands To New Platforms</h3>-->
+     <!--     <a class="more" href="#">READ MORE +</a>-->
+     <!--   </div>-->
+     <!-- </article>-->
+     <!-- <article class="news-card">-->
+        <!-- REPLACE IMAGE_PLACEHOLDER_6.jpg with news image 3 -->
+     <!--   <img src="IMAGE_PLACEHOLDER_6.jpg" alt="Poppy Playtime crossover">-->
+     <!--   <div class="news-body">-->
+     <!--     <small>JUN 05, 2026</small>-->
+     <!--     <h3>Poppy Playtime Teams Up With Global Brands</h3>-->
+     <!--     <a class="more" href="#">READ MORE +</a>-->
+     <!--   </div>-->
+     <!-- </article>-->
+    </div>
+  </div>
+</section>
+<!-- پایان بخش اول -->
+</section>
+
+<!-- این همون خط نئونی که خواستی -->
+<div class="neon-divider"></div>
+
+<!-- شروع بخش بعدی -->
+<section class="games-section">
+    <!-- محتوای بخش بعدی -->
+</section>
+
+<!-- ===== Our Work / Games ===== -->
+<section id="work">
+  <div class="container">
+    <span class="kicker">OUR WORK</span>
+    <h2>Games &amp; Projects</h2>
+    <div class="work-grid">
+      <!-- اضافه کردن تگ <a> دور کل آرتیل برای کلیک‌خور شدن -->
+<!-- کارت اول: بازی SAVEN -->
+<a href="game-detail.HTML?id=saven" style="text-decoration: none; color: inherit; display: block;">
+  <article class="work-card">
+    <img src="file_00000000878081f4af785b15b070ffa3.jpg" alt="SAVEN">
+    <div class="work-info">
+      <small>FLAGSHIP FRANCHISE</small>
+      <h3>SAVEN</h3>
+      <p>Advance the story and fight the city's criminals.</p>
+    </div>
+  </article>
+</a>
+
+    <!--  <article class="work-card">-->
+        <!-- REPLACE IMAGE_PLACEHOLDER_8.jpg with Escape From Playtime art -->
+       <!-- <img src="IMAGE_PLACEHOLDER_8.jpg" alt="Escape From Playtime">-->
+      <!--  <div class="work-info">-->
+       <!--   <small>SPIN-OFF</small>-->
+      <!--    <h3>Escape From Playtime</h3>-->
+      <!--    <p>A fast-paced escape experience set inside the Playtime Co. universe.</p>-->
+      <!--  </div>-->
+     <!-- </article>-->
+      <!--<article class="work-card">-->
+        <!-- REPLACE IMAGE_PLACEHOLDER_9.jpg with crossover art -->
+      <!--  <img src="IMAGE_PLACEHOLDER_9.jpg" alt="Poppy Playtime collaborations">-->
+      <!--  <div class="work-info">-->
+      <!--    <small>COLLABORATIONS</small>-->
+      <!--    <h3>Poppy Playtime × Smiling Critters</h3>-->
+      <!--    <p>Expanding the universe through animation, toys, and brand partnerships.</p>-->
+      <!--  </div>-->
+     <!-- </article>-->
+     <!-- <article class="work-card">-->
+        <!-- REPLACE IMAGE_PLACEHOLDER_10.jpg with Fortnite / Minecraft collab art -->
+    <!--    <img src="IMAGE_PLACEHOLDER_10.jpg" alt="Poppy Playtime platform collaborations">-->
+      <!--  <div class="work-info">
+          <small>PLATFORM PARTNERSHIPS</small>-->
+     <!--     <h3>Poppy Playtime × Fortnite &amp; Minecraft</h3>-->
+      <!--    <p>Official experiences created with Spark Universe and community platforms.</p>-->
+      <!--  </div>-->
+     <!-- </article>-->
+    </div>
+  </div>
+</section>
+<!-- پایان بخش اول -->
+</section>
+
+<!-- این همون خط نئونی که خواستی -->
+<div class="neon-divider"></div>
+
+<!-- شروع بخش بعدی -->
+<section class="games-section">
+    <!-- محتوای بخش بعدی -->
+</section>
+
+<!-- ===== Beyond Games: 3 icon cards ===== -->
+<section id="Store">
+  <div class="container">
+    <span class="kicker">BEYOND GAMES</span>
+    <h2>More Than A Game Studio</h2>
+   <!-- <div class="beyond-grid">
+      <div class="beyond-card">-->
+        <!-- REPLACE IMAGE_PLACEHOLDER_11.png with merch icon -->
+       <!-- <img src="IMAGE_PLACEHOLDER_11.png" alt="Merchandise icon">
+        <h3>Merchandise</h3>
+        <p>Official Poppy Playtime toys, plushies, and collectibles for fans everywhere.</p>
+        <a class="link" href="#">VISIT THE STORE →</a>
+      </div>
+      <div class="beyond-card">-->
+        <!-- REPLACE IMAGE_PLACEHOLDER_12.png with animation icon -->
+      <!--  <img src="IMAGE_PLACEHOLDER_12.png" alt="Animation icon">
+        <h3>Animation</h3>
+        <p>Animated series and shorts bringing the Smiling Critters universe to life.</p>
+        <a class="link" href="#">WATCH NOW →</a>
+      </div>
+      <div class="beyond-card">-->
+        <!-- REPLACE IMAGE_PLACEHOLDER_13.png with licensing icon -->
+       <!-- <img src="IMAGE_PLACEHOLDER_13.png" alt="Licensing icon">
+        <h3>Licensing</h3>
+        <p>Global licensing program partnering with leading consumer-product brands.</p>
+        <a class="link" href="#">LEARN MORE →</a>
+      </div>
+    </div>
+  </div>
+</section>-->
+<!-- پایان بخش اول -->
+</section>
+
+<!-- این همون خط نئونی که خواستی -->
+<div class="neon-divider"></div>
+
+<!-- شروع بخش بعدی -->
+<section class="games-section">
+    <!-- محتوای بخش بعدی -->
+</section>
+
+<!-- ===== Careers ===== -->
+<section id="careers">
+  <div class="container">
+    <span class="kicker">JOIN THE TEAM</span>
+    <h2>Open Positions</h2>
+    <div class="job"><strong>Voice Actor</strong><span>Contract — On-site / Remote →</span></div>
+    <div class="job"><strong>Character Designer</strong><span>Contract — Contractual / Hybrid →</span></div>
+    <div class="job"><strong>Map Designer</strong><span>Contract — On-site / Remote →</span></div>
+    <div class="job"><strong>Programmer</strong><span>Contract — On-site / Remote / Hybrid →</span></div>
+    <div class="job"><strong>Scenario writer</strong><span>Contract — Hybrid →</span></div>
+    <div class="job"><strong>Accountant</strong><span>Full-time — Contractual →</span></div>
+  </div>
+</section>
+<!-- پایان بخش اول -->
+</section>
+
+<!-- این همون خط نئونی که خواستی -->
+<div class="neon-divider"></div>
+
+<!-- شروع بخش بعدی -->
+<section class="games-section">
+    <!-- محتوای بخش بعدی -->
+</section>
+
+<!-- ===== Partnerships ===== -->
+<section>
+  <div class="container">
+    <div class="partner">
+      <span class="kicker">PARTNERSHIPS</span>
+      <h2>Build Something Iconic With Our IP</h2>
+      <p>We partner with studios, publishers, and brands to bring our characters and worlds to new audiences.</p>
+      <a class="btn" href="CAREERS.HTML">BECOME A PARTNER →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer: rounded black box ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-box">
+      <!-- REPLACE IMAGE_PLACEHOLDER_14.png with the white MOB logo -->
+      <img src="Artboard 2.png" alt="MSFYP Company logo">
+      <ul class="footer-nav">
+        <li><a href="#about">STUDIO</a></li>
+        <li><a href="#work">GAMES</a></li>
+        <li><a href="#news">NEWSROOM</a></li>
+        <li><a href="#careers">CAREERS</a></li>
+        <li><a href="#Store">STORE</a></li>
+      </ul>
+      <div class="socials">
+        <a href="https://www.youtube.com/@MSFYPcompany" target="_blank" rel="noopener noreferrer" title="YouTube" class="YouTube"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://x.com/MSFYPcompany" target="_blank" rel="noopener noreferrer" title="X"class="X"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://instagram.com/msfyp.company" target="_blank" rel="noopener noreferrer" title="Instagram"class="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://discord.gg/MSFYPcompany" target="_blank" rel="noopener noreferrer" title="Discord"class="Discord"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></a>
+        <a href="https://github.com/MSFYPcompany" target="_blank" rel="noopener noreferrer" title="GitHub"class="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/> </svg></a>
+        <a href="https://facebook.com/MSFYPcompany" target="_blank" rel="noopener noreferrer" title="Facebook"class="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg></a>
+
+      </div>
+      <p class="copyright">© MSFYP Company. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
